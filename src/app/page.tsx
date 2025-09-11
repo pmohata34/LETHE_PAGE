@@ -22,6 +22,10 @@ export default function Home() {
     { src: "/adamas.png", alt: "Company 1" },
     { src: "/download.png", alt: "Company 2" },
     { src: "/defence.png", alt: "Company 3" },
+    { src: "/dell.png", alt: "Company 4" },
+    { src: "/rbi.png", alt: "Company 5" },
+    { src: "/Sims.png", alt: "Company 6" },
+    { src: "/rbi.png", alt: "Company 7" },
   ];
 
 
@@ -133,9 +137,9 @@ export default function Home() {
         className="h-[40rem]  text-white dark:text-black"
       >
         Discover the power of{" "}
-        <span className="text-[#4025aa]">Tailwind CSS v4</span> with native CSS
+        <span className="text-[#4025aa]">Data Wiping</span> with native CSS
         variables and container queries with
-        <span className="text-[#4025aa]">advanced animations</span>.
+        <span className="text-[#4025aa]"> advanced architectures</span>.
       </MaskContainer>
 </div>
         </div>
@@ -180,13 +184,13 @@ export default function Home() {
           <Pricing />
         </section>
         <section className="w-full max-w-7xl mx-auto mb-34 px-8 flex flex-col items-end">
-          <h2 className="text-5xl font-bold text-white mb-30">Trusted <span className="italic">Partners</span></h2>
+          <h2 className="text-5xl font-bold text-white mb-30">Trusted <span className="italic">Users</span></h2>
           <LogoLoop
             logos={imageLogos}
             speed={120}
             direction="left"
-            logoHeight={88}
-            gap={40}
+            logoHeight={98}
+            gap={120}
             pauseOnHover={false}
             scaleOnHover={false}
             fadeOut={true}

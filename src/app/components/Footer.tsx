@@ -1,4 +1,4 @@
-// components/Footer.tsx
+// components/Footer.tsx  
 import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa"
 import { FiSearch } from "react-icons/fi"
 
@@ -10,19 +10,19 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3 text-sm">WHO WE HELP</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Enterprise Overview</a></li>
-            <li><a href="#">Mobile Overview</a></li>
-            <li><a href="#">ITAD Overview</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Enterprise Overview</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Mobile Overview</a></li>
+            <li><a className="hover:text-indigo-400" href="#">ITAD Overview</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">USE CASES</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">See all cases</a></li>
+            <li><a className="hover:text-indigo-400" href="#">See all cases</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">SOLUTIONS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">See all solutions</a></li>
+            <li><a className="hover:text-indigo-400" href="#">See all solutions</a></li>
           </ul>
         </div>
 
@@ -30,20 +30,20 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3 text-sm">PRODUCTS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Blancco Drive Eraser</a></li>
-            <li><a href="#">Blancco Drive Verifier</a></li>
-            <li><a href="#">Blancco Eraser for Apple Devices</a></li>
-            <li><a href="#">Blancco File Eraser</a></li>
-            <li><a href="#">Blancco Removable Media Eraser</a></li>
-            <li><a href="#">Blancco LUN Eraser</a></li>
-            <li><a href="#">Blancco Virtual Machine Eraser</a></li>
-            <li><a href="#">Blancco Hardware Solutions</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Drive Eraser</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Drive Verifier</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Eraser for Apple Devices</a></li>
+            <li><a className="hover:text-indigo-400" href="#">File Eraser</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Removable Media Eraser</a></li>
+            <li><a className="hover:text-indigo-400" href="#">LUN Eraser</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Virtual Machine Eraser</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Hardware Solutions</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">PORTALS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Cloud portal</a></li>
-            <li><a href="#">Support portal</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Cloud portal</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Support portal</a></li>
           </ul>
         </div>
 
@@ -51,24 +51,24 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3 text-sm">RESOURCES</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Resource Hub</a></li>
-            <li><a href="#">Case Studies</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Resource Hub</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Case Studies</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">EVENTS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Event & Webinars</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Event & Webinars</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">COMPANY</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Certifications</a></li>
-            <li><a href="#">Supported Standards</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">News & Press</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Sustainability</a></li>
+            <li><a className="hover:text-indigo-400" href="#">About Us</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Certifications</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Supported Standards</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Our Team</a></li>
+            <li><a className="hover:text-indigo-400" href="#">News & Press</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Careers</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Sustainability</a></li>
           </ul>
         </div>
 
@@ -76,16 +76,16 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3 text-sm">PARTNERS</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Why Partner with Blancco</a></li>
-            <li><a href="#">Blancco Technology Alliance Partners</a></li>
-            <li><a href="#">Find a Partner</a></li>
-            <li><a href="#">Partner Portal log in</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Why Partner with <span className="italic">Go</span>Recycle</a></li>
+            <li><a className="hover:text-indigo-400" href="#"><span className="italic hover:text-indigo-400">0DAY</span> Technology Alliance Partners</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Find a Partner</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Partner Portal log in</a></li>
           </ul>
 
           <h3 className="font-bold mt-6 mb-3 text-sm">GET IN TOUCH</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Request A Free Trial</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Contact Us</a></li>
+            <li><a className="hover:text-indigo-400" href="#">Request A Free Trial</a></li>
           </ul>
         </div>
 
