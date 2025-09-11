@@ -11,6 +11,7 @@ import MagicBento from "./components/MagicBento";
 import Pricing from "./components/Pricing";
 import LogoLoop from "./components/LogoLoop";
 import Credentials from "./components/Credentials";
+import { ChatbotWidget }  from "./components/ChatBot";
 
 export default function Home() {
   useLenis({ lerp: 0.07 });
@@ -260,12 +261,13 @@ export default function Home() {
           </section>
           <Footer />
         </main>
+        <ChatbotWidget />
       </div>
     </>
   );
 }
-              
-      
-        
-        
-      
+           
+
+
+
+
