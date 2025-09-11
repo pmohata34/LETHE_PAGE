@@ -72,7 +72,7 @@ export default function Home() {
                 height={40}
                 className="mr-3 rounded-full"
               />
-              <a href="/"><span className="italic">Go</span>Recycle</a>
+              <a href="/"><span className="italic">LETHE</a>
             </span>
             {/* Hamburger for small screens */}
             <button
