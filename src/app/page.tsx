@@ -2,25 +2,20 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import useLenis from "./lib/useLenis";
-import { MaskContainer } from "./components/svg-mask-effect"
+import { MaskContainer } from "./components/svg-mask-effect";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import gsap from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagicBento from "./components/MagicBento";
 import Pricing from "./components/Pricing";
 import LogoLoop from "./components/LogoLoop";
 import Credentials from "./components/Credentials";
-import { none } from "@tsparticles/engine";
 
 export default function Home() {
   useLenis({ lerp: 0.07 });
-  const containerRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-
-    const words = ["better", "cute", "beautiful", "modern"];
 
   const imageLogos = [
     { src: "/adamas.png", alt: "Company 1" },
@@ -32,22 +27,11 @@ export default function Home() {
     { src: "/rbi.png", alt: "Company 7" },
   ];
 
-
-
-  const [visible, setVisible] = useState(false);
-
-  // Add missing plansRef and aboutRef
-  const plansRef = useRef<HTMLElement | null>(null);
-  const aboutRef = useRef<HTMLElement | null>(null);
-
-  
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
-
       const section_2 = document.getElementById("horizontal");
       const box_items = gsap.utils.toArray<HTMLElement>(".horizontal__item");
-
       if (section_2 && box_items.length > 0) {
         gsap.to(box_items, {
           xPercent: -100 * (box_items.length - 1),
@@ -63,17 +47,18 @@ export default function Home() {
       }
     }
   }, []);
-  
+
   return (
     <>
       <div className="min-h-screen w-full bg-black">
         <main className="relative z-10">
           {/* Animated Infobar */}
-          <div className="w-full bg-[#4025aa] text-white text-center text-sm py-3 overflow-hidden ">
+          <div className="w-full bg-[#4025aa] text-white text-center text-sm py-3 overflow-hidden">
             <p className="animate-marquee whitespace-nowrap">
-              <span className='font-bold'>
+              <span className="font-bold">
                 Wipe. Verify. Relax. | Launch Special
-              </span>  – Get  <span className='font-bold'>20% </span>OFF on all premium data-wiping plans! Offer valid till <span className='font-bold'>30 Sept. </span>
+              </span>
+              {" "}– Get <span className="font-bold">20% </span>OFF on all premium data-wiping plans! Offer valid till <span className="font-bold">30 Sept. </span>
             </p>
           </div>
           {/* Navbar */}
@@ -170,7 +155,7 @@ export default function Home() {
           <div className="flex items-center justify-start pl-10 gap-10 mt-10 px-8 flex-col-reverse md:flex-row md:items-center md:justify-center md:pl-15 md:gap-10">
             <div className="flex justify-start w-full md:w-auto">
               <video
-                id='vertical'
+                id="vertical"
                 className="w-[90vw] max-w-[640px] h-[420px] md:w-[540px] md:h-[500px] object-cover rounded-2xl shadow-lg ml-[-20px] md:ml-0"
                 src="/landing.mp4"
                 autoPlay
@@ -186,7 +171,7 @@ export default function Home() {
                     Hover <span className="text-[#7558ea]">Here.</span>
                   </p>
                 }
-                className="h-[40rem]  text-white dark:text-black"
+                className="h-[40rem] text-white dark:text-black"
               >
                 Discover the power of{" "}
                 <span className="text-[#4025aa]">Data Wiping</span> with native CSS
@@ -195,93 +180,92 @@ export default function Home() {
               </MaskContainer>
             </div>
           </div>
-        {/* About Section */}
-        <section
-          ref={aboutRef}
-          className={"w-full max-w-5xl mx-auto mt-20 px-8 py-12 bg-black/80 rounded-2xl shadow-lg flex-col md:flex-row gap-8 transition-opacit"}
-        >
-          <div className="flex-1">
-            <h2 className="text-5xl italic font-bold text-white mb-4">Mission</h2>
-            <p className="text-lg text-gray-200 mb-2">
-              GoRecycle's mission is to make secure, transparent, and eco-friendly data wiping accessible to everyone. We empower individuals, organizations, and recyclers with a simple, one-click solution that permanently erases sensitive data, generates tamper-proof proof-of-erasure certificates, and supports responsible IT asset recycling. By combining strong cryptography with user-friendly design, we aim to build trust, prevent data misuse, and accelerate a sustainable circular economy.
-            </p>
-            <p className="text-md text-gray-400">
-              Clean drives, fresh starts — because every byte deserves a second life.
-            </p>
-            <a
-              href="#"
-              className="inline-block mt-6 text-indigo-400 hover:underline text-lg font-medium"
-            >
-              Our Solution →
-            </a>
-            <a
-              href="#"
-              className="inline-block mt-6 ml-9 text-indigo-400 hover:underline text-lg font-medium"
-            >
-              Learn more →
-            </a>
-          </div>
-          <div className="flex-shrink-0 flex items-end justify-end">
-            <Image
-              src="/mission.png"
-              alt="Our Mission"
-              width={480}
-              height={480}
-              className="rounded-xl shadow-lg object-contain"
+          {/* About Section */}
+          <section className="w-full max-w-5xl mx-auto mt-20 px-8 py-12 bg-black/80 rounded-2xl shadow-lg flex-col md:flex-row gap-8 transition-opacit">
+            <div className="flex-1">
+              <h2 className="text-5xl italic font-bold text-white mb-4">Mission</h2>
+              <p className="text-lg text-gray-200 mb-2">
+                GoRecycle's mission is to make secure, transparent, and eco-friendly data wiping accessible to everyone. We empower individuals, organizations, and recyclers with a simple, one-click solution that permanently erases sensitive data, generates tamper-proof proof-of-erasure certificates, and supports responsible IT asset recycling. By combining strong cryptography with user-friendly design, we aim to build trust, prevent data misuse, and accelerate a sustainable circular economy.
+              </p>
+              <p className="text-md text-gray-400">
+                Clean drives, fresh starts — because every byte deserves a second life.
+              </p>
+              <a
+                href="#"
+                className="inline-block mt-6 text-indigo-400 hover:underline text-lg font-medium"
+              >
+                Our Solution →
+              </a>
+              <a
+                href="#"
+                className="inline-block mt-6 ml-9 text-indigo-400 hover:underline text-lg font-medium"
+              >
+                Learn more →
+              </a>
+            </div>
+            <div className="flex-shrink-0 flex items-end justify-end">
+              <Image
+                src="/mission.png"
+                alt="Our Mission"
+                width={480}
+                height={480}
+                className="rounded-xl shadow-lg object-contain"
+              />
+            </div>
+          </section>
+          {/* Credentials Section */}
+          <section className="w-full max-w-5xl mx-auto mt-24 mb-24 px-8 items-end">
+            <Credentials />
+          </section>
+          {/* Plans Section */}
+          <section className="w-full max-w-5xl mx-auto mt-24 mb-24 px-8 items-end">
+            <Pricing />
+          </section>
+          <section className="w-full max-w-7xl mx-auto mb-34 px-8 flex flex-col items-end">
+            <h2 className="text-5xl font-bold text-white mb-30">
+              Trusted <span className="italic">Users</span>
+            </h2>
+            <LogoLoop
+              logos={imageLogos}
+              speed={120}
+              direction="left"
+              logoHeight={98}
+              gap={120}
+              pauseOnHover={false}
+              scaleOnHover={false}
+              fadeOut={true}
+              fadeOutColor="black"
+              ariaLabel="Technology partners"
             />
-          </div>
-        </section>
-        {/* Credentials Section */}
-        <section className="w-full max-w-5xl mx-auto mt-24 mb-24 px-8 items-end">
-          <Credentials />
-        </section>
-        {/* Plans Section */}
-        <section className="w-full max-w-5xl mx-auto mt-24 mb-24 px-8 items-end">
-          <Pricing />
-        </section>
-        <section className="w-full max-w-7xl mx-auto mb-34 px-8 flex flex-col items-end">
-          <h2 className="text-5xl font-bold text-white mb-30">Trusted <span className="italic">Users</span></h2>
-          <LogoLoop
-            logos={imageLogos}
-            speed={120}
-            direction="left"
-            logoHeight={98}
-            gap={120}
-            pauseOnHover={false}
-            scaleOnHover={false}
-            fadeOut={true}
-            fadeOutColor="black"
-            ariaLabel="Technology partners"
-          />
-        </section>
-        {/* USP Section */}
-        <section className="w-full max-w-5xl mx-auto mt-34 mb-24 px-8 flex flex-col items-start">
-          <h2 className="text-5xl font-bold text-white italic mb-8 ml-0">Features <span className="italic">we</span> offer</h2>
-          <div className="flex justify-center items-center w-full">
-            <MagicBento 
-              textAutoHide={true}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              spotlightRadius={300}
-              particleCount={12}
-              glowColor="132, 0, 255"
-            />
-          </div>
-        </section>
+          </section>
+          {/* USP Section */}
+          <section className="w-full max-w-5xl mx-auto mt-34 mb-24 px-8 flex flex-col items-start">
+            <h2 className="text-5xl font-bold text-white italic mb-8 ml-0">
+              Features <span className="italic">we</span> offer
+            </h2>
+            <div className="flex justify-center items-center w-full">
+              <MagicBento
+                textAutoHide={true}
+                enableStars={true}
+                enableSpotlight={true}
+                enableBorderGlow={true}
+                enableTilt={true}
+                enableMagnetism={true}
+                clickEffect={true}
+                spotlightRadius={300}
+                particleCount={12}
+                glowColor="132, 0, 255"
+              />
+            </div>
+          </section>
+          <Footer />
+        </main>
+      </div>
+    </>
+  );
+}
+              
       
         
         
-      <Footer />
-    
-        {/* ...rest of your content if any... */}
-      </main>
-    </div>
-  </>
-  )
-}
-
-
+      
