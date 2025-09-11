@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GoRecycle",
+  title: "LETHE",
   description: "Developed w 🤍 by Team 0day",
 };
 

@@ -54,7 +54,7 @@ export function ChatbotWidget() {
       {open && (
         <div className="fixed bottom-6 right-6 z-50 w-80 max-w-[90vw] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden">
           <div className="bg-[#4025aa] text-white px-4 py-3 flex items-center justify-between">
-            <span className="font-bold">GoRecycle AI Chat</span>
+            <span className="font-bold">Lethe AI Chat</span>
             <button
               className="ml-2 text-white hover:text-gray-200"
               onClick={() => setOpen(false)}

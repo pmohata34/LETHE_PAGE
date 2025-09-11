@@ -5,9 +5,9 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black px-4">
       <div className="bg-black/80 rounded-2xl shadow-lg p-10 max-w-lg w-full flex flex-col items-center">
-        <h1 className="text-4xl font-bold text-white mb-4">Download GoRecycle</h1>
+        <h1 className="text-4xl font-bold text-white mb-4">Download Lethe</h1>
         <p className="text-gray-300 mb-8 text-center">
-          Get the latest version of GoRecycle for your platform. Securely wipe your data and recycle electronics with confidence.
+          Get the latest version of Lethe for your platform. Securely wipe your data and recycle electronics with confidence.
         </p>
         <a
           href="/downloads/gorecycle-latest.zip"

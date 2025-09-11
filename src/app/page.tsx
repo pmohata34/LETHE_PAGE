@@ -66,8 +66,8 @@ export default function Home() {
           <nav className="sticky top-0 w-full bg-black/80 border-b border-white/10 px-8 py-4 flex items-center justify-between z-50 backdrop-blur">
             <span className="flex items-center text-white font-bold text-3xl pl-15">
               <Image
-                src="/logo.png"
-                alt="GoRecycle Logo"
+                src="/GoRecycle Logo blue3.png"
+                alt="LETHE Logo"
                 width={40}
                 height={40}
                 className="mr-3 rounded-full"
@@ -186,7 +186,7 @@ export default function Home() {
             <div className="flex-1">
               <h2 className="text-5xl italic font-bold text-white mb-4">Mission</h2>
               <p className="text-lg text-gray-200 mb-2">
-                GoRecycle's mission is to make secure, transparent, and eco-friendly data wiping accessible to everyone. We empower individuals, organizations, and recyclers with a simple, one-click solution that permanently erases sensitive data, generates tamper-proof proof-of-erasure certificates, and supports responsible IT asset recycling. By combining strong cryptography with user-friendly design, we aim to build trust, prevent data misuse, and accelerate a sustainable circular economy.
+                LETHE's mission is to make secure, transparent, and eco-friendly data wiping accessible to everyone. We empower individuals, organizations, and recyclers with a simple, one-click solution that permanently erases sensitive data, generates tamper-proof proof-of-erasure certificates, and supports responsible IT asset recycling. By combining strong cryptography with user-friendly design, we aim to build trust, prevent data misuse, and accelerate a sustainable circular economy.
               </p>
               <p className="text-md text-gray-400">
                 Clean drives, fresh starts — because every byte deserves a second life.

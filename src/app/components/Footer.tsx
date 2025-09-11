@@ -108,7 +108,7 @@ export default function Footer() {
       <div className="bg-black py-6">
         <div className="max-w-5xl mx-auto px-4">
           <p className="text-center text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} GoRecycle. All rights reserved. <br/>Developed by Team 0DAY
+            &copy; {new Date().getFullYear()} Lethe. All rights reserved. <br/>Developed by Team 0DAY
           </p>
         </div>
       </div>
