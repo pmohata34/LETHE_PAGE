@@ -8,7 +8,7 @@ export default function DownloadPage() {
       <div className="bg-black/80 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-2xl w-full flex flex-col items-center border border-gray-800">
         {/* Heading */}
         <h1 className="text-4xl font-extrabold text-white mb-2">
-          Download GoRecycle
+          Download Lethe
         </h1>
         <p className="text-gray-400 mb-8 text-center max-w-lg">
           Securely wipe your data with{" "}

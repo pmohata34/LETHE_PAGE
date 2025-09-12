@@ -182,29 +182,14 @@ export default function Home() {
             </div>
           </div>
           {/* About Section */}
-          <section className="w-full max-w-5xl mx-auto mt-20 px-8 py-12 bg-black/80 rounded-2xl shadow-lg flex-col md:flex-row gap-8 transition-opacit">
-            <div className="flex-1">
+          <section className="w-full max-w-5xl mx-auto mt-20 px-8 py-12 bg-black/80 rounded-2xl shadow-lg flex flex-col md:flex-row gap-8 transition-opacity">
+            <div className="flex-1 flex flex-col justify-center">
               <h2 className="text-5xl italic font-bold text-white mb-4">Mission</h2>
               <p className="text-lg text-gray-200 mb-2">
                 LETHE's mission is to make secure, transparent, and eco-friendly data wiping accessible to everyone. We empower individuals, organizations, and recyclers with a simple, one-click solution that permanently erases sensitive data, generates tamper-proof proof-of-erasure certificates, and supports responsible IT asset recycling. By combining strong cryptography with user-friendly design, we aim to build trust, prevent data misuse, and accelerate a sustainable circular economy.
               </p>
-              <p className="text-md text-gray-400">
-                Clean drives, fresh starts — because every byte deserves a second life.
-              </p>
-              <a
-                href="#"
-                className="inline-block mt-6 text-indigo-400 hover:underline text-lg font-medium"
-              >
-                Our Solution →
-              </a>
-              <a
-                href="#"
-                className="inline-block mt-6 ml-9 text-indigo-400 hover:underline text-lg font-medium"
-              >
-                Learn more →
-              </a>
             </div>
-            <div className="flex-shrink-0 flex items-end justify-end">
+            <div className="flex-1 flex flex-col justify-center">
               <Image
                 src="/mission.png"
                 alt="Our Mission"
@@ -212,6 +197,26 @@ export default function Home() {
                 height={480}
                 className="rounded-xl shadow-lg object-contain"
               />
+            </div>
+          </section>
+          {/* Mission tagline and links below the image/text */}
+          <section className="w-full max-w-5xl mx-auto px-8 mt-4 flex flex-col items-center">
+            <p className="text-md text-gray-400 mb-2 text-center">
+              Clean drives, fresh starts — because every byte deserves a second life.
+            </p>
+            <div className="flex gap-8 mt-2">
+              <a
+                href="#"
+                className="inline-block text-indigo-400 hover:underline text-lg font-medium"
+              >
+                Our Solution →
+              </a>
+              <a
+                href="#"
+                className="inline-block text-indigo-400 hover:underline text-lg font-medium"
+              >
+                Learn more →
+              </a>
             </div>
           </section>
           {/* Credentials Section */}
@@ -223,7 +228,7 @@ export default function Home() {
             <Pricing />
           </section>
           <section className="w-full max-w-7xl mx-auto mb-34 px-8 flex flex-col items-end">
-            <h2 className="text-5xl font-bold text-white mb-30">
+            <h2 className="text-5xl font-bold text-white mb-30 text-center w-full">
               Trusted <span className="italic">Users</span>
             </h2>
             <LogoLoop
