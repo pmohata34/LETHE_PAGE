@@ -101,15 +101,20 @@ export default function Footer() {
                text-blue-600"><FaYoutube /></a>
             </div>
           </div>
-
-          
         </div>
       </div>
-      <div className="bg-black py-6">
-        <div className="max-w-5xl mx-auto px-4">
-          <p className="text-center text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Lethe. All rights reserved. <br/>Developed by Team 0DAY
-          </p>
+      
+     <div className="max-w-6xl mx-auto px-6 mt-10">
+        {/* Line only on content width */}
+        <div className="border-t border-gray-300">
+          <div className="flex flex-col sm:flex-row justify-start items-center py-5 space-y-2 sm:space-y-0 sm:space-x-8">
+            <p>© 2025 Lethe Technology Group. All rights reserved.</p>
+            <nav className="flex space-x-4 ml-30">
+              <a href="#" className="hover:underline">Privacy Policy</a>
+              <a href="#" className="hover:underline">Cookie Policy</a>
+              <a href="#" className="hover:underline">Modern Slavery Act Disclosure Statement</a>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>

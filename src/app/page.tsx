@@ -12,6 +12,113 @@ import Pricing from "./components/Pricing";
 import LogoLoop from "./components/LogoLoop";
 import Credentials from "./components/Credentials";
 import { ChatbotWidget }  from "./components/ChatBot";
+import { MdEmail, MdShare } from "react-icons/md";
+import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+
+function TopProgress() {
+  const barRef = useRef<HTMLDivElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const doc = document.documentElement;
+
+    const update = () => {
+      const scrollTop = window.pageYOffset || doc.scrollTop || 0;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const progress = max > 0 ? (scrollTop / max) * 100 : 0;
+      if (barRef.current) {
+        // set width so the bar grows left-to-right
+        barRef.current.style.width = `${progress}%`;
+      }
+      rafRef.current = requestAnimationFrame(update);
+    };
+
+    rafRef.current = requestAnimationFrame(update);
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  return (
+    <div
+      aria-hidden="true"
+      className="fixed top-0 left-0 right-0 pointer-events-none z-[9999]"
+      style={{ height: 4 }}
+    >
+      <div
+        ref={barRef}
+        className="h-full bg-[#4025aa] transition-[width] duration-100 ease-linear"
+        style={{ width: "0%" }}
+      />
+    </div>
+  );
+} 
+
+function useInView(options?: IntersectionObserverInit) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect(); // animate only once
+      }
+    }, options);
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [options]);
+
+  return { ref, isVisible };
+}
+
+function ShareSidebar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-50">
+      {/* Sidebar container */}
+      <div
+        className={`bg-white rounded-l-xl shadow-lg transition-all duration-300 ease-in-out ${
+          open ? "w-24" : "w-10"
+        }`}
+      >
+        {/* Toggle button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-12 h-30 flex items-center justify-center bg-white rounded-l-xl"
+        >
+          <div className="flex flex-col gap-3 items-center justify-center">
+            <MdShare className="text-blue-600 text-xl mb-1" />
+            <span className="text-blue-600 font-semibold text-sm rotate-90">
+              Share
+            </span>
+          </div>
+        </button>
+
+        {/* Social Icons */}
+        {open && (
+          <div className="flex flex-col items-center gap-4 py-6 transition-opacity duration-300">
+            <a href="mailto:?subject=Check this out!" target="_blank">
+              <MdEmail className="text-blue-600 text-xl hover:scale-110 transition" />
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <FaFacebookF className="text-blue-600 text-xl hover:scale-110 transition" />
+            </a>
+            <a href="https://linkedin.com" target="_blank">
+              <FaLinkedinIn className="text-blue-600 text-xl hover:scale-110 transition" />
+            </a>
+            <a href="https://twitter.com" target="_blank">
+              <FaXTwitter className="text-blue-600 text-xl hover:scale-110 transition" />
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   useLenis({ lerp: 0.07 });
@@ -25,7 +132,14 @@ export default function Home() {
     { src: "/dell.png", alt: "Company 4" },
     { src: "/rbi.png", alt: "Company 5" },
     { src: "/Sims.png", alt: "Company 6" },
-    { src: "/rbi.png", alt: "Company 7" },
+    { src: "/oracle.png", alt: "Company 7" },
+  ];
+
+  const sndLoops = [
+    { src: "/scdbank.png", alt: "Company 1" },
+    { src: "/siemens.png", alt: "Company 2" },
+    
+    { src: "/ericsson.png", alt: "Company 4" },
   ];
 
   useEffect(() => {
@@ -49,8 +163,15 @@ export default function Home() {
     }
   }, []);
 
+  const { ref: missionRef, isVisible: missionVisible } = useInView({ threshold: 0.2 });
+  const { ref: credsRef, isVisible: credsVisible } = useInView({ threshold: 0.2 });
+  const { ref: pricingRef, isVisible: pricingVisible } = useInView({ threshold: 0.2 });
+  const { ref: usersRef, isVisible: usersVisible } = useInView({ threshold: 0.2 });
+  const { ref: transparencyRef, isVisible: transparencyVisible } = useInView({ threshold: 0.2 });
+
   return (
     <>
+      <TopProgress />
       <div className="min-h-screen w-full bg-black">
         <main className="relative z-10">
           {/* Animated Infobar */}
@@ -66,7 +187,7 @@ export default function Home() {
           <nav className="sticky top-0 w-full bg-black/80 border-b border-white/10 px-8 py-4 flex items-center justify-between z-50 backdrop-blur">
             <span className="flex items-center text-white font-bold text-3xl pl-15">
               <Image
-                src="/GoRecycle Logo blue3.png"
+                src="/logo.png"
                 alt="LETHE Logo"
                 width={40}
                 height={40}
@@ -131,21 +252,38 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
+                    {/* Dropdown content (still uses Link for anchor items) */}
                     {mobileServicesOpen && (
-                      <div className="mt-2 min-w-[160px] bg-black border border-white/10 rounded-lg shadow-lg">
-                        <a href="#" className="block px-4 py-2 text-white hover:bg-indigo-600 rounded-t-lg transition">Data Shredding</a>
-                        <a href="#" className="block px-4 py-2 text-white hover:bg-indigo-600 transition">E-Waste Recycling</a>
-                        <a href="#" className="block px-4 py-2 text-white hover:bg-indigo-600 rounded-b-lg transition">Secure Pickup</a>
+                      <div className="absolute left-0 top-full mt-0 w-[420px] bg-black border border-white/10 rounded-lg shadow-lg transition-opacity duration-200 z-50 p-6 grid grid-cols-2 gap-6">
+                        <div>
+                          <h4 className="text-white font-semibold mb-2">Why partner with us</h4>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">
+                            Partner Ecosystem
+                          </Link>
+                        </div>
+                        <div>
+                          <h4 className="text-white font-semibold mb-2">Alliance Partners</h4>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">Technology Alliance</Link>
+                        </div>
+                        <div>
+                          <h4 className="text-white font-semibold mb-2">Become a Partner</h4>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">Global Partner Program</Link>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">ITAD Program</Link>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">Mobile Processors</Link>
+                        </div>
+                        <div>
+                          <h4 className="text-white font-semibold mb-2">Already a partner?</h4>
+                          <Link href="#" className="block text-gray-300 hover:text-indigo-400 transition">Login Portal</Link>
+                        </div>
                       </div>
                     )}
                   </div>
-                  <a href="#" className="text-white hover:text-indigo-400 transition">Partners</a>
-                  <a href="#" className="text-white hover:text-indigo-400 transition">Blog</a>
-                  <a href="#" className="text-white hover:text-indigo-400 transition">Docs</a>
-                  <a href="#" className="text-white hover:text-indigo-400 transition">Contact</a>
+                  <Link href="#" className="text-white hover:text-indigo-400 transition">Blog</Link>
+                  <Link href="/Doc" className="text-white hover:text-indigo-400 transition">Docs</Link>
+                  <Link href="#" className="text-white hover:text-indigo-400 transition">Contact</Link>
                   <Link
                     href="/download"
-                    className="bg-[#4025aa] text-white font-semibold px-5 py-2 rounded transition mt-2"
+                    className="ml-4 bg-[#4025aa] text-white font-semibold px-5 py-2 rounded transition"
                   >
                     Download
                   </Link>
@@ -153,6 +291,7 @@ export default function Home() {
               </div>
             )}
           </nav>
+
           <div className="flex items-center justify-start pl-10 gap-10 mt-10 px-8 flex-col-reverse md:flex-row md:items-center md:justify-center md:pl-15 md:gap-10">
             <div className="flex justify-start w-full md:w-auto">
               <video
@@ -267,12 +406,8 @@ export default function Home() {
           <Footer />
         </main>
         <ChatbotWidget />
+        <ShareSidebar />
       </div>
     </>
   );
 }
-           
-
-
-
-
