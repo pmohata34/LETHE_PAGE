@@ -8,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
-
 function ShareSidebar() {
   const [open, setOpen] = useState(false);
 
@@ -57,10 +56,10 @@ function ShareSidebar() {
 
 
 export default function Page() {
-     useLenis({ lerp: 0.07 });
+  useLenis({ lerp: 0.07 });
   return (
     <>
-      <div className="min-h-screen w-full bg-black overflow-x-hidden ">
+    <div className="min-h-screen w-full bg-black overflow-x-hidden ">
       {/* Infobar */}
       <div className="marquee fixed top-0 left-0 w-full bg-[#4025aa] text-white text-sm h-12 z-50 flex items-center overflow-hidden">
         <p className="inline-block whitespace-nowrap px-4">
@@ -69,8 +68,7 @@ export default function Page() {
           <span className="font-bold">30 Sept.</span>
         </p>
       </div>
-
-
+      
       <style jsx>{`
         .marquee { overflow: hidden; }
         .marquee p {
@@ -83,8 +81,9 @@ export default function Page() {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-100%); }
         }
-        .marquee:hover p { animation-play-state: paused; }
-      `}</style>
+        .marquee:hover p { animation-play-state: paused; }`
+        }
+      </style>
 
       {/* Navbar */}
       <nav className="fixed top-12 w-full bg-black/80 border-b border-white/10 px-8 py-4 flex items-center justify-between z-50 backdrop-blur">
@@ -159,87 +158,84 @@ export default function Page() {
       </nav>
       <main className="pt-30">
         {/* Documentation Section */}
-<section className="bg-black text-white min-h-screen flex">
-  {/* Sidebar */}
-  <aside className="hidden md:flex flex-col w-64 bg-[#111] border-r border-white/10 p-6">
-    <h2 className="text-xl font-bold mb-6">Docs</h2>
-    <nav className="flex flex-col gap-4 text-gray-300">
-      <Link href="#" className="hover:text-indigo-400 transition">Home</Link>
-      <Link href="#" className="hover:text-indigo-400 transition">Getting Started</Link>
-      <Link href="#" className="hover:text-indigo-400 transition">Authentication</Link>
-      <Link href="#" className="hover:text-indigo-400 transition">API Reference</Link>
-      <Link href="#" className="hover:text-indigo-400 transition">Integrations</Link>
-      <Link href="#" className="hover:text-indigo-400 transition">FAQ</Link>
-    </nav>
-  </aside>
-
-  {/* Main Docs Content */}
-  <div className="flex-1 p-8 md:p-16">
-    <h1 className="text-3xl font-bold mb-4">Welcome to Docs</h1>
-    <p className="text-gray-400 mb-12">
-      Let’s make your integration smooth and enterprise-ready. Browse through the guides below.
-    </p>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {/* Card 1 */}
-      <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
-        <h3 className="text-xl font-semibold mb-4">Quick Start</h3>
-        <p className="text-gray-400 mb-6">
-          Set up your project and integrate in just a few steps.
-        </p>
-        <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
-          Learn More →
-        </Link>
-      </div>
-
-      {/* Card 2 */}
-      <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
-        <h3 className="text-xl font-semibold mb-4">API Reference</h3>
-        <p className="text-gray-400 mb-6">
-          Browse endpoints, request/response formats, and usage.
-        </p>
-        <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
-          View API →
-        </Link>
-      </div>
-
-      {/* Card 3 */}
-      <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
-        <h3 className="text-xl font-semibold mb-4">Integration Guides</h3>
-        <p className="text-gray-400 mb-6">
-          Step-by-step tutorials for SSO, webhooks, and third-party services.
-        </p>
-        <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
-          Explore Guides →
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
-              
-
-       <footer>
-        <div className="max-w-6xl mx-auto px-6 mt-10">
-        {/* Line only on content width */}
-        <div className="border-t border-gray-300">
-          <div className="flex flex-col sm:flex-row justify-start items-center py-5 space-y-2 sm:space-y-0 sm:space-x-8 text-white">
-            <p>© 2025 Lethe Technology Group. All rights reserved.</p>
-            <nav className="flex space-x-4 ml-30">
-              <a href="#" className="hover:underline">Privacy Policy</a>
-              <a href="#" className="hover:underline">Cookie Policy</a>
-              <a href="#" className="hover:underline">Modern Slavery Act Disclosure Statement</a>
+        <section className="bg-black text-white min-h-screen flex">
+          {/* Sidebar */}
+          <aside className="hidden md:flex flex-col w-64 bg-[#111] border-r border-white/10 p-6">
+            <h2 className="text-xl font-bold mb-6">Docs</h2>
+            <nav className="flex flex-col gap-4 text-gray-300">
+              <Link href="#" className="hover:text-indigo-400 transition">Home</Link>
+              <Link href="#" className="hover:text-indigo-400 transition">Getting Started</Link>
+              <Link href="#" className="hover:text-indigo-400 transition">Authentication</Link>
+              <Link href="#" className="hover:text-indigo-400 transition">API Reference</Link>
+              <Link href="#" className="hover:text-indigo-400 transition">Integrations</Link>
+              <Link href="#" className="hover:text-indigo-400 transition">FAQ</Link>
             </nav>
+        </aside>
+
+        {/* Main Docs Content */}
+        <div className="flex-1 p-8 md:p-16">
+          <h1 className="text-3xl font-bold mb-4">Welcome to Docs</h1>
+          <p className="text-gray-400 mb-12">
+            Let’s make your integration smooth and enterprise-ready. Browse through the guides below.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
+              <h3 className="text-xl font-semibold mb-4">Quick Start</h3>
+              <p className="text-gray-400 mb-6">
+                Set up your project and integrate in just a few steps.
+              </p>
+              <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
+                Learn More →
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+        {/* Footer */}
+        <footer>
+          <div className="max-w-6xl mx-auto px-6 mt-10">
+          {/* Line only on content width */}
+            <div className="border-t border-gray-300">
+              <div className="flex flex-col sm:flex-row justify-start items-center py-5 space-y-2 sm:space-y-0 sm:space-x-8 text-white">
+                <p>© 2025 Lethe Technology Group. All rights reserved.</p>
+                <nav className="flex space-x-4 ml-30">
+                  <a href="#" className="hover:underline">Privacy Policy</a>
+                  <a href="#" className="hover:underline">Cookie Policy</a>
+                  <a href="#" className="hover:underline">Modern Slavery Act Disclosure Statement</a>
+                </nav>
+              </div>
+            </div>
+          </div>
         </footer>
+          
         <ShareSidebar />
         
+        {/* Card 2 */}
+        <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
+          <h3 className="text-xl font-semibold mb-4">API Reference</h3>
+          <p className="text-gray-400 mb-6">
+            Browse endpoints, request/response formats, and usage.
+          </p>
+          <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
+            View API →
+          </Link>
+        </div>
+
+        {/* Card 3 */}
+        <div className="bg-[#111] border border-white/10 rounded-xl shadow-lg p-6 hover:border-indigo-500 transition">
+          <h3 className="text-xl font-semibold mb-4">Integration Guides</h3>
+          <p className="text-gray-400 mb-6">
+            Step-by-step tutorials for SSO, webhooks, and third-party services.
+          </p>
+          <Link href="#" className="text-indigo-400 hover:text-indigo-300 font-medium">
+            Explore Guides →
+          </Link>
+        </div>
       </main>
-      </div>    
-      
-        
+    </div>
     </>
   );
 }
